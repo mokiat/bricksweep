@@ -86,6 +86,16 @@ article
     background-image: url('assets/dist/level_locked_default.png');
 }
 
+#menu .level.unlocked
+{
+    background-image: url('assets/dist/level_unlocked_default.png');
+}
+
+#menu .level.unlocked:hover:enabled
+{
+    background-image: url('assets/dist/level_unlocked_pressed.png');
+}
+
 #menu .level.bronze
 {
     background-image: url('assets/dist/level_bronze_default.png');
