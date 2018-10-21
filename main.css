@@ -83,45 +83,45 @@ article
 
 #menu .level.locked
 {
-    background-image: url('assets/dist/level_locked_default.png');
+    background-image: url('assets/images/level_locked_default.png');
 }
 
 #menu .level.unlocked
 {
-    background-image: url('assets/dist/level_unlocked_default.png');
+    background-image: url('assets/images/level_unlocked_default.png');
 }
 
 #menu .level.unlocked:hover:enabled
 {
-    background-image: url('assets/dist/level_unlocked_pressed.png');
+    background-image: url('assets/images/level_unlocked_pressed.png');
 }
 
 #menu .level.bronze
 {
-    background-image: url('assets/dist/level_bronze_default.png');
+    background-image: url('assets/images/level_bronze_default.png');
 }
 
 #menu .level.bronze:hover:enabled
 {
-    background-image: url('assets/dist/level_bronze_pressed.png');
+    background-image: url('assets/images/level_bronze_pressed.png');
 }
 
 #menu .level.silver
 {
-    background-image: url('assets/dist/level_silver_default.png');
+    background-image: url('assets/images/level_silver_default.png');
 }
 
 #menu .level.silver:hover:enabled
 {
-    background-image: url('assets/dist/level_silver_pressed.png');
+    background-image: url('assets/images/level_silver_pressed.png');
 }
 
 #menu .level.gold
 {
-    background-image: url('assets/dist/level_gold_default.png');
+    background-image: url('assets/images/level_gold_default.png');
 }
 
 #menu .level.gold:hover:enabled
 {
-    background-image: url('assets/dist/level_gold_pressed.png');
+    background-image: url('assets/images/level_gold_pressed.png');
 }
