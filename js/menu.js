@@ -29,6 +29,13 @@ class LevelPageObject {
         this.jqElement.removeClass(LEVEL_TYPE_GOLD);
         this.jqElement.addClass(type);
     }
+
+    onClick(listener) {
+        this.jqElement.click((event) => {
+            event.preventDefault();
+            listener();
+        });
+    }
 };
 
 class LevelSetPageObject {
@@ -51,6 +58,14 @@ class MenuPageObject {
         this.jqElement = $('#menu');
     }
 
+    show() {
+        this.jqElement.removeAttr('hidden');
+    }
+
+    hide() {
+        this.jqElement.attr('hidden', '');
+    }
+
     getLevelSetCount() {
         return this.jqElement.find('.levelset').length;
     }
@@ -62,9 +77,19 @@ class MenuPageObject {
 };
 
 class MenuController {
-    constructor(menuPO, progress) {
+    constructor(frameManager, menuPO, progress) {
+        this.frameManager = frameManager;
         this.menuPO = menuPO;
         this.progress = progress;
+
+        for (let levelSetIndex = 0; levelSetIndex < this.menuPO.getLevelSetCount(); levelSetIndex++) {
+            const levelSetPO = this.menuPO.getLevelSet(levelSetIndex);
+            for (let levelIndex = 0; levelIndex < levelSetPO.getLevelCount(); levelIndex++) {
+                levelSetPO.getLevel(levelIndex).onClick(() => {
+                    frameManager.open('game', levelSetIndex, levelIndex);
+                });
+            }
+        }
     }
 
     initialize() {
