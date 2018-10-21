@@ -1,0 +1,15 @@
+{
+  "width" : 3,
+  "height" : 3,
+  "bricks" : [
+    "black", "green", "black",
+    "green", "white", "black",
+    "black", "green", "black"
+  ],
+  "gold_moves" : 1,
+  "silver_moves" : 2,
+  "tip" : {
+    "x" : 0,
+    "y" : 1
+  }
+}

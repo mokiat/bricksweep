@@ -1,0 +1,17 @@
+{
+  "width": 3,
+  "height": 3,
+  "bricks": [
+    "red",
+    "green",
+    "black",
+    "black",
+    "red",
+    "green",
+    "white",
+    "green",
+    "red"
+  ],
+  "gold_moves": 6,
+  "silver_moves": 7
+}
