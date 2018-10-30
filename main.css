@@ -125,3 +125,61 @@ article
 {
     background-image: url('assets/images/level_gold_pressed.png');
 }
+
+#game
+{
+    text-align: center;
+}
+
+#game .tileset
+{
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#game .tile
+{
+    user-select: none;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background-size: cover;
+}
+
+#game .tile.typeblack
+{
+    background-image: url('assets/images/brick-black.png');
+}
+
+#game .tile.typered
+{
+    cursor: move;
+    background-image: url('assets/images/brick-red.png');
+}
+
+#game .tile.typegreen
+{
+    cursor: move;
+    background-image: url('assets/images/brick-green.png');
+}
+
+#game .tile.typeblue
+{
+    cursor: move;
+    background-image: url('assets/images/brick-blue.png');
+}
+
+#game .tile.typeyellow
+{
+    cursor: move;
+    background-image: url('assets/images/brick-yellow.png');
+}
+
+#game .tile.typewhite
+{
+    cursor: move;
+    background-image: url('assets/images/brick-white.png');
+}
