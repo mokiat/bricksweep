@@ -15,6 +15,9 @@ class SceneInitializer {
                 this.facade.createBrick(y, x, brickType);
             }
         }
+        if (level.tip) {
+            this.facade.activateTip(level.tip.y, level.tip.x);
+        }
     }
 
     _getBrickType(name) {

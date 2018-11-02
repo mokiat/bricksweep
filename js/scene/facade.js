@@ -1,9 +1,10 @@
 'use strict';
 
 class GameFacade {
-    constructor(ecsManager, board) {
+    constructor(ecsManager, board, tipSystem) {
         this.ecsManager = ecsManager;
         this.board = board;
+        this.tipSystem = tipSystem;
     }
 
     reset(width, height) {
@@ -29,6 +30,11 @@ class GameFacade {
         this._addBrickSprite(entity, type);
         this._addBrickBlink(entity);
         return entity;
+    }
+
+    activateTip(row, column) {
+        const position = this.board.calculateBrickIdealScreenPosition(row, column);
+        this.tipSystem.activate(position);
     }
 
     _addBrickPosition(entity, row, column) {
