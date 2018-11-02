@@ -1,6 +1,7 @@
 'use strict';
 
 const ECS_MAX_ENTITIES = 1024;
+const ECS_INVALID_ENTITY = -1;
 
 class ECSSlot {
     constructor() {
