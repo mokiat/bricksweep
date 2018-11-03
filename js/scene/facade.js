@@ -53,8 +53,8 @@ class GameFacade {
 
     _addBrickSprite(entity, type) {
         const spriteComponent = new SpriteComponent();
-        spriteComponent.width = 64;
-        spriteComponent.height = 64;
+        spriteComponent.width = BRICK_WIDTH;
+        spriteComponent.height = BRICK_HEIGHT;
         spriteComponent.opacity = 1.0;
         spriteComponent.spriteClass = type.spriteClass;
         this.ecsManager.addComponent(entity, 'sprite', spriteComponent);

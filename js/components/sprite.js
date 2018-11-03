@@ -6,5 +6,6 @@ class SpriteComponent {
         this.height = 64;
         this.opacity = 1.0;
         this.spriteClass = 'typeblack';
+        this.depth = 50;
     }
 }

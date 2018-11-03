@@ -53,6 +53,7 @@ class TipSystem {
         spriteComponent.width = 128;
         spriteComponent.height = 64;
         spriteComponent.opacity = 0.8;
+        spriteComponent.depth = 10;
         spriteComponent.spriteClass = 'typearrow';
         this.ecsManager.addComponent(entity, 'sprite', spriteComponent);
 
@@ -73,6 +74,7 @@ class TipSystem {
         spriteComponent.width = 64;
         spriteComponent.height = 64;
         spriteComponent.opacity = 0.8;
+        spriteComponent.depth = 10;
         spriteComponent.spriteClass = 'typehand';
         this.ecsManager.addComponent(entity, 'sprite', spriteComponent);
 
