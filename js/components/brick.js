@@ -19,6 +19,15 @@ const BrickTypeBlue = new BrickType(4, 'typeblue', true);
 const BrickTypeYellow = new BrickType(5, 'typeyellow', true);
 const BrickTypeWhite = new BrickType(-1, 'typewhite', true);
 
+const BRICK_TYPES = [
+    BrickTypeBlack,
+    BrickTypeRed,
+    BrickTypeGreen,
+    BrickTypeBlue,
+    BrickTypeYellow,
+    BrickTypeWhite
+];
+
 class BrickComponent {
     constructor() {
         this.row = 0;
