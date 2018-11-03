@@ -183,3 +183,15 @@ article
     cursor: move;
     background-image: url('assets/images/brick-white.png');
 }
+
+#game .tile.typearrow
+{
+    pointer-events: none;
+    background-image: url('assets/images/tip-arrow.png');
+}
+
+#game .tile.typehand
+{
+    pointer-events: none;
+    background-image: url('assets/images/tip-hand.png');
+}
