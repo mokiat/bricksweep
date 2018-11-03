@@ -6,6 +6,18 @@ class Vec2 {
         this.y = y;
     }
 
+    clone() {
+        return new Vec2(
+            this.x,
+            this.y
+        );
+    }
+
+    setTo(other) {
+        this.x = other.x;
+        this.y = other.y;
+    }
+
     inc(other) {
         this.x += other.x;
         this.y += other.y;
