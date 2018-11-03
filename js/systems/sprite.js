@@ -26,9 +26,11 @@ class SpriteSystem {
             element.css('height', `${sprite.height}px`);
             element.css('opacity', sprite.opacity);
             element.css('z-index', 100 - sprite.depth);
-            element.removeClass();
-            element.addClass('tile');
-            element.addClass(sprite.spriteClass);
+            if (!element.hasClass(sprite.spriteClass)) {
+                element.removeClass();
+                element.addClass('tile');
+                element.addClass(sprite.spriteClass);
+            }
         }
     }
 
