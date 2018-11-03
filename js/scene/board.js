@@ -15,12 +15,16 @@ class Board {
         this.bricks = new Array(width, height);
     }
 
+    contains(row, column) {
+        return (row >= 0) && (column >= 0) && (row < this.height) && (column < this.width);
+    }
+
     setBrick(row, column, tile) {
         this.bricks[row * this.width + column] = tile;
     }
 
     getBrick(row, column) {
-        if (row < 0 || column < 0 || row >= this.height || column >= this.width) {
+        if (!this.contains(row, column)) {
             return ECS_INVALID_ENTITY;
         }
         return this.bricks[row * this.width + column];

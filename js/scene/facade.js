@@ -24,6 +24,12 @@ class GameFacade {
         return entity;
     }
 
+    destroyBrick(row, column) {
+        const entity = this.board.getBrick(row, column);
+        this.ecsManager.deleteEntity(entity);
+        this.board.setBrick(row, column, ECS_INVALID_ENTITY);
+    }
+
     createBlinkingBrickOverlay(row, column, type) {
         const entity = this.ecsManager.createEntity();
         this._addBrickPosition(entity, row, column);

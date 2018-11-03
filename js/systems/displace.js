@@ -1,6 +1,6 @@
 'use strict';
 
-const DISPLACE_THRESHOLD = 0.75;
+const DISPLACE_THRESHOLD = 0.5;
 
 class DisplaceSystem {
     constructor(ecsManager, board, facade) {

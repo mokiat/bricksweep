@@ -131,12 +131,18 @@ article
     text-align: center;
 }
 
-#game .tileset
+#game .area
 {
     margin-top: 200px;
+    padding: 64px;
+    text-align: center;
+}
+
+#game .tileset
+{
+    position: relative;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
     overflow: hidden;
 }
 

@@ -7,6 +7,7 @@ class BrickType {
         this.isMovable = isMovable;
     }
 
+    // FIXME: Typo
     get isFusable() {
         return this.fuseCount !== -1;
     }
