@@ -20,6 +20,9 @@ class Board {
     }
 
     getBrick(row, column) {
+        if (row < 0 || column < 0 || row >= this.height || column >= this.width) {
+            return ECS_INVALID_ENTITY;
+        }
         return this.bricks[row * this.width + column];
     }
 

@@ -32,6 +32,28 @@ class GameFacade {
         return entity;
     }
 
+    swapBricks(firstRow, firstColumn, secondRow, secondColumn) {
+        const firstEntity = this.board.getBrick(firstRow, firstColumn);
+        const firstPositionComponent = this.ecsManager.getComponent(firstEntity, 'position');
+        const firstCoords = firstPositionComponent.coords.clone();
+        const firstBrickComponent = this.ecsManager.getComponent(firstEntity, 'brick');
+
+        const secondEntity = this.board.getBrick(secondRow, secondColumn);
+        const secondPositionComponent = this.ecsManager.getComponent(secondEntity, 'position');
+        const secondCoords = secondPositionComponent.coords.clone();
+        const secondBrickComponent = this.ecsManager.getComponent(secondEntity, 'brick');
+
+        firstPositionComponent.coords.setTo(secondCoords);
+        firstBrickComponent.row = secondRow;
+        firstBrickComponent.column = secondColumn;
+        this.board.setBrick(secondRow, secondColumn, firstEntity);
+
+        secondPositionComponent.coords.setTo(firstCoords);
+        secondBrickComponent.row = firstRow;
+        secondBrickComponent.column = firstColumn;
+        this.board.setBrick(firstRow, firstColumn, secondEntity);
+    }
+
     activateTip(row, column) {
         const position = this.board.calculateBrickIdealScreenPosition(row, column);
         this.tipSystem.activate(position);
