@@ -15,7 +15,7 @@ class FuseSystem {
     isComplete() {
         for (let entity of this.ecsManager.search(this.brickQuery)) {
             const brickComponent = this.ecsManager.getComponent(entity, 'brick');
-            if (brickComponent.type.isFusable) {
+            if (brickComponent.type.isFusible) {
                 return false;
             }
         }
@@ -24,7 +24,7 @@ class FuseSystem {
 
     isImpossible() {
         for (let brickType of BRICK_TYPES) {
-            if (!brickType.isFusable) {
+            if (!brickType.isFusible) {
                 continue;
             }
             const count = this._getBrickCount(brickType);
@@ -119,7 +119,7 @@ class FuseSystem {
     _getGroup(row, column) {
         const entity = this.board.getBrick(row, column);
         const brickComponent = this.ecsManager.getComponent(entity, 'brick');
-        if (!brickComponent.type.isFusable) {
+        if (!brickComponent.type.isFusible) {
             return [];
         }
         const count = this._countSimilar(row, column, brickComponent.type);
