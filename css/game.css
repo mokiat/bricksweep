@@ -1,0 +1,81 @@
+#game
+{
+    text-align: center;
+}
+
+#game .area
+{
+    margin-top: 100px;
+    padding: 64px;
+    text-align: center;
+}
+
+#game .tileset
+{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+#game .tile
+{
+    user-select: none;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background-size: cover;
+}
+
+#game .tile.typeblack
+{
+    background-image: url('../assets/images/brick-black.png');
+}
+
+#game .tile.typered
+{
+    cursor: move;
+    background-image: url('../assets/images/brick-red.png');
+}
+
+#game .tile.typegreen
+{
+    cursor: move;
+    background-image: url('../assets/images/brick-green.png');
+}
+
+#game .tile.typeblue
+{
+    cursor: move;
+    background-image: url('../assets/images/brick-blue.png');
+}
+
+#game .tile.typeyellow
+{
+    cursor: move;
+    background-image: url('../assets/images/brick-yellow.png');
+}
+
+#game .tile.typewhite
+{
+    cursor: move;
+    background-image: url('../assets/images/brick-white.png');
+}
+
+#game .tile.typearrow
+{
+    pointer-events: none;
+    background-image: url('../assets/images/tip-arrow.png');
+}
+
+#game .tile.typehand
+{
+    pointer-events: none;
+    background-image: url('../assets/images/tip-hand.png');
+}
+
+#game .status 
+{
+    background-color: #00000099;
+    height: 60px;
+}

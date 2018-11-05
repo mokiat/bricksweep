@@ -1,18 +1,31 @@
 'use strict';
 
+class IndexFrameManager extends FrameManager {
+    constructor() {
+        super();
+    }
+
+    showBackButton() {
+        $('.back-button').removeAttr('hidden');
+    }
+
+    hideBackButton() {
+        $('.back-button').attr('hidden', '');
+    }
+}
+
 $(document).ready(() => {
     $('.collapsible').collapsible();
 
     const progress = new Progress();
-    const frameManager = new FrameManager();
 
-    const menuPO = new MenuPageObject();
-    const menuController = new MenuController(frameManager, menuPO, progress);
-    frameManager.register('menu', new Frame(menuPO, menuController));
-
-    const gamePO = new GamePageObject();
-    const gameController = new GameController(frameManager, gamePO);
-    frameManager.register('game', new Frame(gamePO, gameController));
-
+    const frameManager = new IndexFrameManager();
+    $('.back-button').click((e) => {
+        e.preventDefault();
+        frameManager.onBackButtonPressed();
+    })
+    frameManager.register('menu', new MenuFrame(frameManager));
+    frameManager.register('tutorial', new TutorialFrame(frameManager));
+    frameManager.register('selection', new SelectionFrame(frameManager, progress));
     frameManager.open('menu');
 });

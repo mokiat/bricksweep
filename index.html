@@ -13,110 +13,152 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/selection.css">
+    <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="main.css">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.0/underscore-min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/frame.js"></script>
+
+    <script type="text/javascript" src="js/engine/math.js"></script>
+    <script type="text/javascript" src="js/engine/ecs.js"></script>
+
+    <script type="text/javascript" src="js/components/position.js"></script>
+    <script type="text/javascript" src="js/components/brick.js"></script>
+    <script type="text/javascript" src="js/components/blink.js"></script>
+    <script type="text/javascript" src="js/components/displacement.js"></script>
+    <script type="text/javascript" src="js/components/sprite.js"></script>
+
+    <script type="text/javascript" src="js/scene/board.js"></script>
+    <script type="text/javascript" src="js/scene/facade.js"></script>
+    <script type="text/javascript" src="js/scene/initializer.js"></script>
+
+    <script type="text/javascript" src="js/systems/sprite.js"></script>
+    <script type="text/javascript" src="js/systems/motion.js"></script>
+    <script type="text/javascript" src="js/systems/blink.js"></script>
+    <script type="text/javascript" src="js/systems/fuse.js"></script>
+    <script type="text/javascript" src="js/systems/displace.js"></script>
+    <script type="text/javascript" src="js/systems/tip.js"></script>
+
+    <script type="text/javascript" src="js/ui/frame.js"></script>
+    <script type="text/javascript" src="js/ui/manager.js"></script>
+
     <script type="text/javascript" src="js/progress.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/tutorial.js"></script>
+    <script type="text/javascript" src="js/selection.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
     <script type="text/javascript" src="main.js"></script>
 </head>
 
 <body>
-    <article id="menu">
-        <img src="assets/images/banner.png" />
-        <ul class="collapsible">
-            <li class="active">
-                <div class="collapsible-header"><i class="material-icons">info</i>Tutorial</div>
-                <div class="collapsible-body">
-                    <div class="video-container">
-                        <iframe width="600" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0"
-                            allowfullscreen></iframe>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <img src="assets/images/banner.png" class="brand-logo left hide-on-med-and-up">
+                <img src="assets/images/banner.png" class="brand-logo center hide-on-small-only">
+                <ul class="right">
+                    <li><a class="back-button" href="#" hidden>Back</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <article id="menu" hidden>
+            <div class="container">
+                <a id="open-tutorial" class="card hoverable" href="#">
+                    <div class="card-image">
+                        <img src="assets/images/button-tutorial.png">
+                        <span class="card-title">Watch Tutorial</span>
+                    </div>
+                </a>
+
+                <a id="open-levels3x3" class="card hoverable" href="#">
+                    <div class="card-image">
+                        <img src="assets/images/button-play3x3.png">
+                        <span class="card-title">Play 3 x 3</span>
+                    </div>
+                </a>
+
+                <a id="open-levels4x3" class="card hoverable" href="#">
+                    <div class="card-image">
+                        <img src="assets/images/button-play4x3.png">
+                        <span class="card-title">Play 4 x 3</span>
+                    </div>
+                </a>
+            </div>
+        </article>
+
+        <article id="tutorial" hidden>
+            <div class="container" style="max-width: 600px;">
+                <div class="video-container" style="margin-left: auto; margin-right: auto; margin-top: 20px">
+                    <iframe id="tutorial-player" width="600" height="480" frameborder="0" src="https://www.youtube.com/embed/Q8TXgCzxEnw?rel=0&enablejsapi=1"
+                        allowscriptaccess="always" allowfullscreen></iframe>
+                </div>
+            </div>
+        </article>
+
+        <article id="selection" hidden>
+            <div class="container">
+                <div class="levelset">
+                    <div class="row">
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                    </div>
+                    <div class="row">
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                    </div>
+                    <div class="row">
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                    </div>
+                    <div class="row">
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                    </div>
+                    <div class="row">
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                    </div>
+                    <div class="row">
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
+                        <a class="col s3 level locked"></a>
                     </div>
                 </div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">looks_3</i>Levels 3x3</div>
-                <div class="collapsible-body">
-                    <div class="levelset">
-                        <div class="row">
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                        </div>
-                        <div class="row">
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                        </div>
-                        <div class="row">
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">looks_4</i>Levels 4x3</div>
-                <div class="collapsible-body">
-                    <div class="levelset">
-                        <div class="row">
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                        </div>
-                        <div class="row">
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                        </div>
-                        <div class="row">
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                            <a class="col s3 level locked"></a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </article>
-    <article id="game" hidden>
-        <span>Game area!</span>
-    </article>
+            </div>
+        </article>
+
+        <article id="game" hidden>
+            <div class="area">
+                <div class="tileset"></div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="page-footer">
+        <div class="footer-copyright right">
+            <a href="https://github.com/mokiat/bricksweep">Source Code</a>
+        </div>
+        <div class="footer-copyright left">
+            <span>Created by Momchil Atanasov</span>
+        </div>
+    </footer>
 </body>
 
 </html>

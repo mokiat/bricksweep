@@ -1,203 +1,55 @@
 html
 {
-    width: 100%;
-    height: 100%;
     background-color: #0075A3;
 }
 
 body
 {
-    margin: 0px;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background: linear-gradient(#B8E1E1, #0075A3);
 }
 
-article
+body header nav
 {
+    background-color: #0075A3;
+}
+
+body header nav img.brand-logo
+{
+    height: 100%;
+}
+
+body header nav ul a
+{
+    font-size: large;
+}
+
+body main
+{
+    flex: 1 0 auto;
+}
+
+body main article
+{
+    display: block;
+    padding: 20px;
+    width: 100%;
     height: 100%;
     overflow: scroll;
 }
 
-#menu
+body footer.page-footer
 {
-    padding-top: 20px;
+    padding-top: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    background-color: black;
 }
 
-#menu>img
+body footer.page-footer a
 {
-    display: block;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-}
-
-#menu>ul
-{
-    margin-left: auto;
-    margin-right: auto;
-    border: 0px;
-    width: 600px;
-}
-
-#menu .collapsible-header
-{
-    border: 0px;
-    background-color: #B8E1E1;
-}
-
-#menu .collapsible-body
-{
-    border: 0px;
-    text-align: center;
-}
-
-#menu .levelset
-{
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-#menu .row
-{
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0px;
-}
-
-#menu .level
-{
-    margin: 8px;
-    width: 48px;
-    height: 48px;
-    background-size: cover;
-}
-
-#menu .level:enabled
-{
-    cursor: pointer;
-}
-
-#menu .level.locked
-{
-    background-image: url('assets/images/level_locked_default.png');
-}
-
-#menu .level.unlocked
-{
-    background-image: url('assets/images/level_unlocked_default.png');
-}
-
-#menu .level.unlocked:hover:enabled
-{
-    background-image: url('assets/images/level_unlocked_pressed.png');
-}
-
-#menu .level.bronze
-{
-    background-image: url('assets/images/level_bronze_default.png');
-}
-
-#menu .level.bronze:hover:enabled
-{
-    background-image: url('assets/images/level_bronze_pressed.png');
-}
-
-#menu .level.silver
-{
-    background-image: url('assets/images/level_silver_default.png');
-}
-
-#menu .level.silver:hover:enabled
-{
-    background-image: url('assets/images/level_silver_pressed.png');
-}
-
-#menu .level.gold
-{
-    background-image: url('assets/images/level_gold_default.png');
-}
-
-#menu .level.gold:hover:enabled
-{
-    background-image: url('assets/images/level_gold_pressed.png');
-}
-
-#game
-{
-    text-align: center;
-}
-
-#game .area
-{
-    margin-top: 200px;
-    padding: 64px;
-    text-align: center;
-}
-
-#game .tileset
-{
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
-}
-
-#game .tile
-{
-    user-select: none;
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    background-size: cover;
-}
-
-#game .tile.typeblack
-{
-    background-image: url('assets/images/brick-black.png');
-}
-
-#game .tile.typered
-{
-    cursor: move;
-    background-image: url('assets/images/brick-red.png');
-}
-
-#game .tile.typegreen
-{
-    cursor: move;
-    background-image: url('assets/images/brick-green.png');
-}
-
-#game .tile.typeblue
-{
-    cursor: move;
-    background-image: url('assets/images/brick-blue.png');
-}
-
-#game .tile.typeyellow
-{
-    cursor: move;
-    background-image: url('assets/images/brick-yellow.png');
-}
-
-#game .tile.typewhite
-{
-    cursor: move;
-    background-image: url('assets/images/brick-white.png');
-}
-
-#game .tile.typearrow
-{
-    pointer-events: none;
-    background-image: url('assets/images/tip-arrow.png');
-}
-
-#game .tile.typehand
-{
-    pointer-events: none;
-    background-image: url('assets/images/tip-hand.png');
+    color: white;
 }
