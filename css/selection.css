@@ -1,0 +1,77 @@
+#selection .container
+{
+    text-align: center;
+}
+
+#selection .levelset
+{
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+    text-align: center;
+}
+
+#selection .row
+{
+    text-align: center;
+}
+
+#selection .level
+{
+    margin: 8px;
+    width: 48px;
+    height: 48px;
+    background-size: cover;
+}
+
+#selection .level:enabled
+{
+    cursor: pointer;
+}
+
+#selection .level.locked
+{
+    background-image: url('../assets/images/level_locked_default.png');
+}
+
+#selection .level.unlocked
+{
+    background-image: url('../assets/images/level_unlocked_default.png');
+}
+
+#selection .level.unlocked:hover:enabled
+{
+    background-image: url('../assets/images/level_unlocked_pressed.png');
+}
+
+#selection .level.bronze
+{
+    background-image: url('../assets/images/level_bronze_default.png');
+}
+
+#selection .level.bronze:hover:enabled
+{
+    background-image: url('../assets/images/level_bronze_pressed.png');
+}
+
+#selection .level.silver
+{
+    background-image: url('../assets/images/level_silver_default.png');
+}
+
+#selection .level.silver:hover:enabled
+{
+    background-image: url('../assets/images/level_silver_pressed.png');
+}
+
+#selection .level.gold
+{
+    background-image: url('../assets/images/level_gold_default.png');
+}
+
+#selection .level.gold:hover:enabled
+{
+    background-image: url('../assets/images/level_gold_pressed.png');
+}
