@@ -1,12 +1,12 @@
 'use strict';
 
-const ProgressUnplayed = 'unplayed';
-const ProgressBronze = 'bronze';
-const ProgressSilver = 'silver';
-const ProgressGold = 'gold';
+const PROGRESS_UNPLAYED = 'unplayed';
+const PROGRESS_BRONZE = 'bronze';
+const PROGRESS_SILVER = 'silver';
+const PROGRESS_GOLD = 'gold';
 
 class Progress {
     getStatus(levelSetIndex, levelIndex) {
-        return ProgressUnplayed;
+        return PROGRESS_UNPLAYED;
     }
-};
+}
