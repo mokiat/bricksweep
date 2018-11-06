@@ -27,5 +27,6 @@ $(document).ready(() => {
     frameManager.register('menu', new MenuFrame(frameManager));
     frameManager.register('tutorial', new TutorialFrame(frameManager));
     frameManager.register('selection', new SelectionFrame(frameManager, progress));
+    frameManager.register('game', new GameFrame(frameManager, progress));
     frameManager.open('menu');
 });
