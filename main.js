@@ -16,6 +16,7 @@ class IndexFrameManager extends FrameManager {
 
 $(document).ready(() => {
     $('.collapsible').collapsible();
+    $('.modal').modal();
 
     const progress = new Progress();
 
