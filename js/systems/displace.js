@@ -63,12 +63,11 @@ class DisplaceSystem {
     }
 
     onMouseMove(x, y) {
-        // console.log('[displace system] mouse move: %d / %d', x, y);
         this._resetDisplacedBricks();
 
         if (!this.ecsManager.hasEntity(this.selectedEntity)) {
             this.selectedEntity = ECS_INVALID_ENTITY;
-            return;
+            return false;
         }
 
         const mousePosition = new Vec2(x, y);
@@ -80,35 +79,40 @@ class DisplaceSystem {
             if (dragDistance.x > BRICK_WIDTH * DISPLACE_THRESHOLD) {
                 if (this._shiftBricksHorizontally(brickComponent.row, brickComponent.column, +1)) {
                     this.moves++;
+                    return true;
                 }
                 this._cancelDisplacement();
-                return;
+                return false;
             }
             if (dragDistance.x < -BRICK_WIDTH * DISPLACE_THRESHOLD) {
                 if (this._shiftBricksHorizontally(brickComponent.row, brickComponent.column, -1)) {
                     this.moves++;
+                    return true;
                 }
                 this._cancelDisplacement();
-                return;
+                return false;
             }
             this._displaceBricksHorizontally(brickComponent.row, brickComponent.column, dragDistance.x);
         } else {
             if (dragDistance.y > BRICK_HEIGHT * DISPLACE_THRESHOLD) {
                 if (this._shiftBricksVertically(brickComponent.row, brickComponent.column, +1)) {
                     this.moves++;
+                    return true;
                 }
                 this._cancelDisplacement();
-                return;
+                return false;
             }
             if (dragDistance.y < -BRICK_HEIGHT * DISPLACE_THRESHOLD) {
                 if (this._shiftBricksVertically(brickComponent.row, brickComponent.column, -1)) {
                     this.moves++;
+                    return true;
                 }
                 this._cancelDisplacement();
-                return;
+                return false;
             }
             this._displaceBricksVertically(brickComponent.row, brickComponent.column, dragDistance.y);
         }
+        return false;
     }
 
     _createGhostBrickEntity() {
