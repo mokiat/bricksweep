@@ -146,7 +146,36 @@
 
         <article id="game" hidden>
             <div class="area">
-                <div class="tileset"></div>
+                <div class="tileset" draggable="true"></div>
+                <div class="status">
+                    <span>Can be solved in <span id="target-moves" class="number">1</span> move(s).</span>
+                    <br>
+                    <span>You have used <span id="current-moves" class="number">0</span> move(s) so far.</span>
+                </div>
+            </div>
+            <div id="dialog" class="modal">
+                <div class="modal-content">
+                    <img class="label label-paused" src="assets/images/label_paused.png" hidden>
+                    <img class="label label-defeat" src="assets/images/label_defeat.png" hidden>
+                    <img class="label label-victory" src="assets/images/label_victory.png" hidden>
+                    <div class="achievement achievement-bronze" hidden>
+                        <img class="star" src="assets/images/star_bronze.png">
+                    </div>
+                    <div class="achievement achievement-silver" hidden>
+                        <img class="star" src="assets/images/star_silver.png">
+                        <img class="star" src="assets/images/star_silver.png">
+                    </div>
+                    <div class="achievement achievement-gold" hidden>
+                        <img class="star" src="assets/images/star_gold.png">
+                        <img class="star" src="assets/images/star_gold.png">
+                        <img class="star" src="assets/images/star_gold.png">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a id="dialog-exit" href="#!" class="waves-effect waves-green btn-flat modal-close">Exit</a>
+                    <a id="dialog-retry" href="#!" class="waves-effect waves-green btn-flat modal-close">Retry</a>
+                    <a id="dialog-continue" href="#!" class="waves-effect waves-green btn-flat modal-close">Continue</a>
+                </div>
             </div>
         </article>
     </main>

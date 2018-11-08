@@ -8,7 +8,6 @@ class GameFacade {
     }
 
     reset(width, height) {
-        this.ecsManager.reset();
         this.board.resize(width, height);
     }
 
