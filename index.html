@@ -3,8 +3,8 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta name="description" content="A 2D logical puzzle game">
-    <meta name="keywords" content="puzzle, game, brick, sweep, wrap">
+    <meta name="description" content="A logic puzzle game">
+    <meta name="keywords" content="puzzle, game, brick, sweep, wrap, shift, fuse">
     <meta name="author" content="Momchil Atanasov">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -147,25 +147,25 @@
         <article id="game" hidden>
             <div class="area">
                 <div class="tileset" draggable="true"></div>
-                <div class="status">
-                    <span>Can be solved in <span id="target-moves" class="number">1</span> move(s).</span>
-                    <br>
-                    <span>You have used <span id="current-moves" class="number">0</span> move(s) so far.</span>
-                </div>
+            </div>
+            <div id="status">
+                <span>Can be solved in <span id="target-moves" class="number">1</span> move(s).</span>
+                <br>
+                <span>You have used <span id="current-moves" class="number">0</span> move(s) so far.</span>
             </div>
             <div id="dialog" class="modal">
                 <div class="modal-content">
-                    <img class="label label-paused" src="assets/images/label_paused.png" hidden>
-                    <img class="label label-defeat" src="assets/images/label_defeat.png" hidden>
-                    <img class="label label-victory" src="assets/images/label_victory.png" hidden>
-                    <div class="achievement achievement-bronze" hidden>
+                    <img id="label-paused" class="label" src="assets/images/label_paused.png" hidden>
+                    <img id="label-defeat" class="label" src="assets/images/label_defeat.png" hidden>
+                    <img id="label-victory" class="label" src="assets/images/label_victory.png" hidden>
+                    <div id="achievement-bronze" class="achievement" hidden>
                         <img class="star" src="assets/images/star_bronze.png">
                     </div>
-                    <div class="achievement achievement-silver" hidden>
+                    <div id="achievement-silver" class="achievement" hidden>
                         <img class="star" src="assets/images/star_silver.png">
                         <img class="star" src="assets/images/star_silver.png">
                     </div>
-                    <div class="achievement achievement-gold" hidden>
+                    <div id="achievement-gold" class="achievement" hidden>
                         <img class="star" src="assets/images/star_gold.png">
                         <img class="star" src="assets/images/star_gold.png">
                         <img class="star" src="assets/images/star_gold.png">

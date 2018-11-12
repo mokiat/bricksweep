@@ -39,29 +39,29 @@ class DialogPageObject {
 
     openPaused() {
         this._clear();
-        this.jqElement.find('.label-paused').show();
+        this.jqElement.find('#label-paused').show();
         this.jqElement.find('#dialog-continue').show();
         this._open();
     }
 
     openDefeat() {
         this._clear();
-        this.jqElement.find('.label-defeat').show();
+        this.jqElement.find('#label-defeat').show();
         this._open();
     }
 
     openVictory(achievement) {
         this._clear();
-        this.jqElement.find('.label-victory').show();
+        this.jqElement.find('#label-victory').show();
         switch (achievement) {
             case GAME_ACHIEVEMENT_BRONZE:
-                this.jqElement.find('.achievement-bronze').show();
+                this.jqElement.find('#achievement-bronze').show();
                 break;
             case GAME_ACHIEVEMENT_SILVER:
-                this.jqElement.find('.achievement-silver').show();
+                this.jqElement.find('#achievement-silver').show();
                 break;
             case GAME_ACHIEVEMENT_GOLD:
-                this.jqElement.find('.achievement-gold').show();
+                this.jqElement.find('#achievement-gold').show();
                 break;
         }
         this.jqElement.find('#dialog-continue').show();
@@ -106,63 +106,49 @@ class PlayAreaPageObject {
 
     listenOnMouseDown(listener) {
         this.jqElement.on('touchstart', (e) => {
-            e.preventDefault();
-            const touch = event.targetTouches[0];
-            const offset = this.jqTilesetElement.offset();
-            listener(
-                touch.pageX - offset.left,
-                touch.pageY - offset.top
-            );
+            this._notifyTouchEvent(e, listener);
         });
         this.jqElement.mousedown((e) => {
             e.preventDefault();
-            const offset = this.jqTilesetElement.offset();
-            listener(
-                e.pageX - offset.left,
-                e.pageY - offset.top
-            );
+            this._notifyMouseEvent(e, listener);
         });
     }
 
     listenOnMouseUp(listener) {
         this.jqElement.on('touchend', (e) => {
-            e.preventDefault();
-            const touch = event.targetTouches[0];
-            const offset = this.jqTilesetElement.offset();
-            listener(
-                touch.pageX - offset.left,
-                touch.pageY - offset.top
-            );
-            alert('touch edn!');
+            this._notifyTouchEvent(e, listener);
         });
         this.jqElement.mouseup((e) => {
-            e.preventDefault();
-            const offset = this.jqTilesetElement.offset();
-            listener(
-                e.pageX - offset.left,
-                e.pageY - offset.top
-            );
+            this._notifyMouseEvent(e, listener);
         });
     }
 
     listenOnMouseMove(listener) {
         this.jqElement.on('touchmove', (e) => {
-            e.preventDefault();
-            const touch = event.targetTouches[0];
-            const offset = this.jqTilesetElement.offset();
-            listener(
-                touch.pageX - offset.left,
-                touch.pageY - offset.top
-            );
+            this._notifyTouchEvent(e, listener);
         });
         this.jqElement.mousemove((e) => {
-            e.preventDefault();
-            const offset = this.jqTilesetElement.offset();
-            listener(
-                e.pageX - offset.left,
-                e.pageY - offset.top
-            );
+            this._notifyMouseEvent(e, listener);
         });
+    }
+
+    _notifyTouchEvent(e, listener) {
+        e.preventDefault();
+        const touch = event.targetTouches[0];
+        const offset = this.jqTilesetElement.offset();
+        listener(
+            touch.pageX - offset.left,
+            touch.pageY - offset.top
+        );
+    }
+
+    _notifyMouseEvent(e, listener) {
+        e.preventDefault();
+        const offset = this.jqTilesetElement.offset();
+        listener(
+            e.pageX - offset.left,
+            e.pageY - offset.top
+        );
     }
 }
 
@@ -183,7 +169,7 @@ class GameFrame extends Frame {
         this.displacementSystem = new DisplaceSystem(this.ecsManager, this.board, this.gameFacade);
         this.sceneInitializer = new SceneInitializer(this.gameFacade);
 
-        this.statusPO = new StatusPageObject(this.jqElement.find('.status').first());
+        this.statusPO = new StatusPageObject(this.jqElement.find('#status').first());
 
         this.dialogPO = new DialogPageObject(this.jqElement.find('#dialog').first());
         this.dialogPO.listenOnExit(() => {

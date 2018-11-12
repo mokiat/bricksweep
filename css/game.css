@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-#game .modal
+#game #dialog
 {
     outline: none;
     border: 5px solid white;
@@ -12,32 +12,32 @@
     background-color: #34B4CD;
 }
 
-#game .modal .btn-flat
+#game #dialog .btn-flat
 {
     color: white;
     font-weight: bold;
     background-color: #0075A3;
 }
 
-#game .modal .achievement
+#game #dialog .achievement
 {
     margin-top: 20px;
     text-align: center;
 }
 
-#game .modal .star
+#game #dialog .star
 {
     width: 25%;
 }
 
-#game .modal img
+#game #dialog img
 {
     width: 100%;
 }
 
 #game .area
 {
-    margin-top: 100px;
+    padding: 32px;
     text-align: center;
 }
 
@@ -105,7 +105,7 @@
     background-image: url('../assets/images/tip-hand.png');
 }
 
-#game .status 
+#game #status
 {
     margin-top: 30px;
     margin-left: auto;
@@ -116,7 +116,7 @@
     background-color: #00000099;
 }
 
-#game .status .number
+#game #status .number
 {
     font-size: 110%;
     font-weight: bolder;
