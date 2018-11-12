@@ -256,7 +256,7 @@ class GameFrame extends Frame {
 
     _loadLevel(levelSetIndex, levelIndex, callback) {
         console.log('loading level %d-%d', levelSetIndex, levelIndex);
-        $.get(`/assets/levels/set${levelSetIndex}/level${levelIndex}.json`, callback);
+        $.get(`assets/levels/set${levelSetIndex}/level${levelIndex}.json`, callback);
     }
 
     _initScene(level) {
