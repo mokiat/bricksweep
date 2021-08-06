@@ -5,3 +5,6 @@ indent_size = 2
 
 [*.js]
 quote_type = single
+
+[*.jsx]
+quote_type = single

@@ -5,9 +5,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 
-import logo from './logo.svg';
-import './App.css';
-
 const App = ({ classes }) => {
   const { t } = useTranslation();
 
@@ -21,34 +18,18 @@ const App = ({ classes }) => {
           </Button>
         </Toolbar>
       </AppBar>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <p>TODO</p>
     </div>
   );
 };
 
 export default withStyles({
-  holder: {
-    backgroundColor: 'red',
-  },
+  holder: {},
   appBar: {
     backgroundColor: '#0075A3',
   },
   banner: {
+    pointerEvents: 'none',
     height: '64px',
   },
   backButton: {
