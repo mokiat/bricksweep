@@ -1,38 +1,23 @@
-import { useTranslation } from 'react-i18next';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
+import Home from '../Home';
+import Tutorial from '../Tutorial';
 
-const App = ({ classes }) => {
-  const { t } = useTranslation();
-
+const Application = () => {
   return (
-    <div className={classes.holder}>
-      <AppBar className={classes.appBar} position="static">
-        <Toolbar>
-          <img className={classes.banner} alt="logo" src="/images/banner.png" />
-          <Button className={classes.backButton} color="inherit">
-            {t('Back')}
-          </Button>
-        </Toolbar>
-      </AppBar>
-      <p>TODO</p>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        {/* The order of the Routes matters! */}
+        <Route path="/tutorial">
+          <Tutorial />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 };
 
-export default withStyles({
-  holder: {},
-  appBar: {
-    backgroundColor: '#0075A3',
-  },
-  banner: {
-    pointerEvents: 'none',
-    height: '64px',
-  },
-  backButton: {
-    height: '64px',
-  },
-})(App);
+export default Application;

@@ -5,11 +5,17 @@ const resources = {
   en: {
     translation: {
       Back: 'Back',
+      'Watch Tutorial': 'Watch Tutorial',
+      'Play 3 x 3': 'Play 3 x 3',
+      'Play 4 x 3': 'Play 4 x 3',
     },
   },
   bg: {
     translation: {
       Back: 'Назад',
+      'Watch Tutorial': 'Изгледай Урок',
+      'Play 3 x 3': 'Играй 3 x 3',
+      'Play 4 x 3': 'Играй 4 x 3',
     },
   },
 };
