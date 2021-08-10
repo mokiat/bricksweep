@@ -36,7 +36,9 @@ const Frame = ({ classes, children, isBackVisible, onBack }) => {
         </Toolbar>
       </AppBar>
 
-      <Container className={classes.container}>{children}</Container>
+      <Container className={classes.container} maxWidth="md">
+        {children}
+      </Container>
 
       <AppBar className={classes.footer} position="fixed">
         <Toolbar>
@@ -81,8 +83,10 @@ export default withStyles({
     height: '64px',
   },
   container: {
-    paddingTop: '100px',
-    paddingBottom: '100px',
+    marginTop: '64px',
+    marginBottom: '64px',
+    paddingTop: '50px',
+    paddingBottom: '50px',
     textAlign: 'center',
   },
   footer: {

@@ -33,10 +33,7 @@ Link.defaultProps = {
 };
 
 export default withStyles({
-  root: {
-    margin: '30px auto',
-    maxWidth: '300px',
-  },
+  root: {},
   header: {
     backgroundColor: 'black',
   },
@@ -47,6 +44,7 @@ export default withStyles({
     fontWeight: 'bold',
   },
   media: {
+    width: '300px',
     height: '150px',
   },
 })(Link);
