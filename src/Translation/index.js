@@ -5,17 +5,19 @@ const resources = {
   en: {
     translation: {
       Back: 'Back',
-      'Watch Tutorial': 'Watch Tutorial',
-      'Play 3 x 3': 'Play 3 x 3',
-      'Play 4 x 3': 'Play 4 x 3',
+      'Play random level': 'Play random level',
+      'Watch video lesson': 'Watch video lesson',
+      'Play 3 by 3': 'Play 3 by 3',
+      'Play 4 by 3': 'Play 4 by 3',
     },
   },
   bg: {
     translation: {
       Back: 'Назад',
-      'Watch Tutorial': 'Изгледай Урок',
-      'Play 3 x 3': 'Играй 3 x 3',
-      'Play 4 x 3': 'Играй 4 x 3',
+      'Play random level': 'Играй произволно ниво',
+      'Watch video lesson': 'Изгледай Урок',
+      'Play 3 by 3': 'Играй 3 на 3',
+      'Play 4 by 3': 'Играй 4 на 3',
     },
   },
 };

@@ -13,17 +13,13 @@ const Frame = ({ classes, children, isBackVisible, onBack }) => {
 
   return (
     <>
-      <AppBar className={classes.header} position="fixed">
+      <AppBar className={classes.header} position="fixed" title={'Hello'}>
         <Toolbar>
-          <div className={classes.bannerWrapper}>
-            <a href="/">
-              <img
-                className={classes.banner}
-                alt="logo"
-                src="/images/banner.png"
-              />
-            </a>
-          </div>
+          {/* <div className={classes.bannerWrapper}> */}
+          <a href="/" className={classes.banner}>
+            <img alt="logo" src="/images/banner.png" />
+          </a>
+          {/* </div> */}
           {isBackVisible && (
             <Button
               className={classes.backButton}
@@ -69,25 +65,28 @@ Frame.defaultProps = {
 
 export default withStyles({
   header: {
+    justifyContent: 'center',
     backgroundColor: '#0075A3',
   },
-  bannerWrapper: {
-    textAlign: 'center',
-    height: '64px',
-    flexGrow: 1,
-  },
   banner: {
-    height: '64px',
-  },
-  backButton: {
-    height: '64px',
+    height: '50px',
+    flexGrow: 1,
+    textAlign: 'center',
+    margin: '4px',
+    '& img': {
+      maxHeight: '100%',
+    },
   },
   container: {
-    marginTop: '64px',
-    marginBottom: '64px',
-    paddingTop: '50px',
-    paddingBottom: '50px',
+    marginTop: '58px',
+    marginBottom: '58px',
+    paddingTop: '58px',
+    paddingBottom: '58px',
     textAlign: 'center',
+    '@media only screen and (max-width: 768px)': {
+      paddingTop: '20px',
+      paddingBottom: '20px',
+    },
   },
   footer: {
     backgroundColor: '#000000',
