@@ -33,7 +33,7 @@ export default withStyles({
   title: {
     display: 'block',
     marginBottom: '5px',
-    fontSize: '18px',
+    fontSize: '16px',
     fontWeight: 'bold',
   },
   tile: {

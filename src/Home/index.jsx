@@ -20,7 +20,7 @@ const HomeScreen = ({ classes }) => {
         direction="row"
         justifyContent="center"
         alignItems="flex-start"
-        spacing={2}
+        spacing={4}
       >
         <Grid item>
           <Tile

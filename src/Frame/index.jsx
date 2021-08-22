@@ -15,11 +15,9 @@ const Frame = ({ classes, children, isBackVisible, onBack }) => {
     <>
       <AppBar className={classes.header} position="fixed" title={'Hello'}>
         <Toolbar>
-          {/* <div className={classes.bannerWrapper}> */}
           <a href="/" className={classes.banner}>
             <img alt="logo" src="/images/banner.png" />
           </a>
-          {/* </div> */}
           {isBackVisible && (
             <Button
               className={classes.backButton}
@@ -39,7 +37,9 @@ const Frame = ({ classes, children, isBackVisible, onBack }) => {
       <AppBar className={classes.footer} position="fixed">
         <Toolbar>
           <Grid container justifyContent="space-between" spacing={1}>
-            <Typography>{t('Created by Momchil Atanasov')}</Typography>
+            <Link className={classes.link} href="http://mokiat.com">
+              {t('Created by mokiat')}
+            </Link>
             <Link
               className={classes.link}
               href="https://github.com/mokiat/bricksweep"
